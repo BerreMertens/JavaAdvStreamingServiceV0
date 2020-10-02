@@ -2,11 +2,11 @@ package be.pxl.ja.streamingservice.model;
 
 import java.time.LocalDate;
 
-public class Movie extends be.pxl.ja.opdracht1.Content implements Playable {
+public class Movie extends Content implements Playable {
     public static final int Long_PLAYING_TIME = 2 * 60 +15;
 
     private String director;
-    private LocalDate releasDate;
+    private LocalDate releaseDate;
     private int duration;
     private Genre genre;
 
@@ -24,12 +24,12 @@ public class Movie extends be.pxl.ja.opdracht1.Content implements Playable {
         this.director = director;
     }
 
-    public LocalDate getReleasDate() {
-        return releasDate;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setReleasDate(LocalDate releasDate) {
-        this.releasDate = releasDate;
+    public void setReleaseDate(LocalDate releasDate) {
+        this.releaseDate = releaseDate;
     }
 
     public int getDuration() {
@@ -80,7 +80,7 @@ public class Movie extends be.pxl.ja.opdracht1.Content implements Playable {
 
     @Override
     public String toString() {
-        return (this.releasDate==null) ? super.getTitle() : super.getTitle() + " " + Integer.toString(this.releasDate.getYear());
+        return (this.releaseDate==null) ? super.getTitle() : super.getTitle() + " " + Integer.toString(this.releaseDate.getYear());
     }
     @Override
     public void play() {
