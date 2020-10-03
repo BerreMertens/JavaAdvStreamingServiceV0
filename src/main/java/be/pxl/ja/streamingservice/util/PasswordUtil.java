@@ -26,9 +26,9 @@ public class PasswordUtil {
 			passwordStrength=2;
 		}
 
-		requirementsPasswordStrength.add(password.chars().anyMatch(Character::isDigit));
-		requirementsPasswordStrength.add(password.chars().anyMatch(Character::isLowerCase));
-		requirementsPasswordStrength.add(password.chars().anyMatch(Character::isUpperCase));
+		requirementsPasswordStrength.add(password.chars().distinct().anyMatch(Character::isDigit));
+		requirementsPasswordStrength.add(password.chars().distinct().anyMatch(Character::isLowerCase));
+		requirementsPasswordStrength.add(password.chars().distinct().anyMatch(Character::isUpperCase));
 		requirementsPasswordStrength.add(password.chars().distinct().anyMatch(ch->SPECIAL_CHARACTERS.contains(String.valueOf(((char) ch)))));
 
 
